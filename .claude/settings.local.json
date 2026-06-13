@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.e-com-net.com)",
+      "WebFetch(domain:www.cnblogs.com)",
+      "Bash(gcc -std=c11 -O2 -Wall -lm -o /tmp/test_bin 202206-1.c)",
+      "Bash(gcc -std=c11 -O2 -Wall -lm -o /tmp/test_bin 202312-2.c)",
+      "Bash(gcc -std=c11 -O2 -Wall -lm -o /tmp/test_bin 202309-1.c)",
+      "Bash(gcc -std=c11 -O2 -Wall -lm -o /tmp/test_bin 202212-1.c)",
+      "Bash(gcc -std=c11 -O2 -Wall -o /tmp/test_202206_1 202206-1.c -lm)",
+      "Bash(gcc -std=c11 -O2 -Wall -o /tmp/test_202312_2 202312-2.c -lm)",
+      "Bash(gcc -std=c11 -O2 -Wall -o /tmp/test_202309_1 202309-1.c -lm)",
+      "Bash(gcc -std=c11 -O2 -Wall -o /tmp/test_202212_1 202212-1.c -lm)"
+    ]
+  }
+}
