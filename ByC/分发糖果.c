@@ -1,22 +1,25 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 
 int candy(int* ratings, int ratingsSize) {
-    int *candyNums = (int*)malloc(ratingsSize * sizeof(int));
-    for (int i = 0; i < ratingsSize; i++) {
-        candyNums[i] = 1;
+    int* nums = (int*)calloc(ratingsSize, sizeof(int));
+    for (int i = 0; i < ratingsSize; i++) nums[i] = 1;
+
+    for (int i = 1; i < ratingsSize; i++) {
+        if (ratings[i] > ratings[i - 1]) {
+            nums[i] = nums[i - 1] + 1;
+        }
     }
 
-    for (int i = 0; i < ratingsSize - 1; i++) {
-        if ((ratings[i] < ratings[i + 1]) && !(candyNums[i] < candyNums[i + 1])) { candyNums[i + 1]++;}
-        else if ((ratings[i] > ratings[i + 1]) && !(candyNums[i] > candyNums[i + 1])) { candyNums[i]++;}
+    for (int i = ratingsSize - 2; i >= 0; i--) {
+        if (ratings[i] > ratings[i + 1]) {
+            int right = nums[i + 1] + 1;
+            if (right > nums[i]) nums[i] = right;
+        }
     }
 
-    int change = 0;
-    for (int i = 0; i < ratingsSize; i++) {
-        change += ratings[i];
-    }
-
-    return change;
+    int sum = 0;
+    for (int i = 0; i < ratingsSize; i++) sum += nums[i];
+    free(nums);
+    return sum;
 }
