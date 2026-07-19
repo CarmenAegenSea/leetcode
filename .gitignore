@@ -1,0 +1,6 @@
+﻿*.exe
+pdb
+__pycache__/
+.vs/
+*.user
+Debug/
