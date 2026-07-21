@@ -14,6 +14,7 @@ class Solution:
             timeOil = 0
             for j in range(begin, begin + len(cost)):
                 timeOil += cost[j % len(cost)]
+                
                 if timeOil < 0:
                     begin = j + 1
                     break
